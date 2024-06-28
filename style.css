@@ -324,6 +324,19 @@ h2 {
 
 /* carousel styling */
 
+.mobile_carousel {
+    display: none;
+}
+
+@media(max-width:767px) {
+    .mobile_carousel {
+        display: block;
+    }
+    .web_carousel {
+        display: none;
+    }
+}
+
 
 /* content_section styling*/
 
