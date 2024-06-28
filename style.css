@@ -106,7 +106,7 @@ h2 {
 }
 
 .mybag-item>div {
-    padding: 8px 8px 8px 8px;
+    padding: 8px 8px 8px 32px;
 }
 
 .mybag-item>div>img {
@@ -220,6 +220,7 @@ h2 {
     right: 20px;
     bottom: 20px;
     z-index: 1111111;
+    /* padding: 20px; */
     cursor: pointer;
 }
 
@@ -336,11 +337,11 @@ h2 {
 }
 
 .category_container hr {
-    max-width: 150px;
-    flex-grow: 1;
-    border: 0;
-    border-top: 1px solid var(--black);
-    margin-top: 10px;
+    max-width: 150px!important;
+    flex-grow: 1!important;
+    border: 0!important;
+    border-top: 1px solid var(--black) !important;
+    margin-top: 10px !important;
 }
 
 .category_container h4 {
@@ -1201,7 +1202,7 @@ h2 {
 
 @keyframes marquee {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
@@ -1215,10 +1216,11 @@ h2 {
     padding: 10px;
     text-align: left;
     width: 267px;
-    height: 280px;
+    height: 150px !important;
     box-sizing: border-box;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-overflow: ellipsis;
 }
 
 .card:hover {

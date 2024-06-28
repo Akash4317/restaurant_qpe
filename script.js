@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function openbag() {
-    document.getElementById("mybag").style.width = "300px"
+    document.getElementById("mybag").style.width = "350px"
 }
 
 function closebag() {
