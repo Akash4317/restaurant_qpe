@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -329,6 +329,7 @@ h2 {
 .category_container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     padding: 20px;
     margin-top: 20px;
@@ -339,6 +340,7 @@ h2 {
     flex-grow: 1;
     border: 0;
     border-top: 1px solid var(--black);
+    margin-top: 10px;
 }
 
 .category_container h4 {
@@ -464,6 +466,7 @@ h2 {
 
 .menu-nav-tab {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -515,8 +518,7 @@ h2 {
 }
 
 .menu-item-div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -572,6 +574,7 @@ h2 {
 
 @media (max-width: 768px) {
     .menu-item-div {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
     .menu-item-div .menu-item:nth-child(n+5) {
@@ -880,27 +883,27 @@ h2 {
     font-size: 14px;
 }
 
+.testimonial_tag {
+    text-align: center !important;
+}
+
 .testimonial_tag h3 {
     color: var(--black);
-    font-size: 16.25px;
-    font-style: normal;
+    font-size: 42px;
     font-weight: 700;
     line-height: 131.972%;
-    margin-right: 20px;
-    text-align: justify;
 }
 
 .testimonial_tag span {
     color: var(--primary-brown-color);
-    font-size: 16.25px;
-    font-style: normal;
+    font-size: 42px;
     font-weight: 700;
     line-height: 131.972%;
 }
 
 .testimonial_tag p {
     color: var(--333);
-    font-size: 9.18px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -917,6 +920,7 @@ h2 {
     margin: 20px 0;
     overflow-x: auto;
     white-space: nowrap;
+    /* display: none; */
 }
 
 .nav {
@@ -1185,7 +1189,6 @@ h2 {
 
 .testimonial_text {
     max-width: 800px;
-    /* margin: 0 auto; */
     overflow: hidden;
     padding: 10px;
 }
