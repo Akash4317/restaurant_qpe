@@ -185,25 +185,31 @@ h2 {
 .bag_footer_info {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 150px;
     color: var(--black);
+}
+
+.bag_footer_info p {
+    font-weight: 600;
 }
 
 .bag_footer>p {
     font-size: 12px;
+    font-weight: 500;
+    /* margin-left: 25px; */
 }
 
 .bag_footer button {
     border: none;
-    width: 250px;
+    width: 50%;
     padding: 15px;
-    background-color: #eab002;
+    background-color: var(--primary-yellow);
     color: var(--white);
     transition: 0.3s ease-in-out;
 }
 
 .bag_footer button:hover {
-    background-color: #d8a200;
+    background-color: var(--dark-orange);
 }
 
 @media(max-width:458px) {
