@@ -504,7 +504,7 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
+    max-width: 90%;
     max-width: 1200px;
     margin: auto;
     border-radius: 10px;
@@ -571,6 +571,13 @@ h2 {
 .view-more:hover {
     background-color: var(--dark-orange);
     transform: scale(1.05);
+}
+
+@media(max-width:767px) {
+    .menu-item-div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 
