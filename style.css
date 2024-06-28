@@ -79,7 +79,7 @@ ul {
     z-index: 10000000;
     right: 0;
     overflow-x: hidden;
-    background-color: var(--white);
+    background-color: var(--bg-color);
     transition: 0.5s;
 }
 
@@ -201,7 +201,7 @@ h2 {
 
 .bag_footer button {
     border: none;
-    width: 50%;
+    width: 300px;
     padding: 15px;
     background-color: var(--primary-yellow);
     color: var(--white);
@@ -212,12 +212,6 @@ h2 {
     background-color: var(--dark-orange);
 }
 
-@media(max-width:458px) {
-    .bag_footer button {
-        width: 220px;
-    }
-}
-
 
 /* cart icon styling */
 
@@ -226,7 +220,6 @@ h2 {
     right: 20px;
     bottom: 20px;
     z-index: 1111111;
-    /* padding: 20px; */
     cursor: pointer;
 }
 
