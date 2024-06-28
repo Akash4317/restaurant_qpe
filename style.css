@@ -588,19 +588,16 @@ h2 {
 @media (max-width: 768px) {
     .menu-item-div {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-    .menu-item-div .menu-item:nth-child(n+5) {
+    /* .menu-item-div .menu-item:nth-child(n+5) {
         display: none;
-    }
+    } */
 }
 
 @media (max-width: 480px) {
     .menu-item-div {
         grid-template-columns: 1fr 1fr;
-    }
-    .menu-item-div .menu-item:nth-child(n+3) {
-        display: none;
     }
     .menu-item {
         width: 100%;
@@ -940,7 +937,6 @@ h2 {
     display: flex;
     flex-wrap: nowrap;
     width: max-content;
-    /* Ensure this is set */
 }
 
 .nav-link.custom-nav-link {
