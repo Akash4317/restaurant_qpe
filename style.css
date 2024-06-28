@@ -331,7 +331,7 @@ h2 {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .category_container hr {
@@ -339,6 +339,11 @@ h2 {
     flex-grow: 1;
     border: 0;
     border-top: 1px solid var(--black);
+}
+
+.category_container h4 {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .offer-slider-container {
@@ -454,6 +459,9 @@ h2 {
 
 /* menu styling */
 
+
+/* menu styling */
+
 .menu-nav-tab {
     display: flex;
     justify-content: space-between;
@@ -510,9 +518,12 @@ h2 {
 }
 
 .menu-item-div {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
     align-items: center;
+    padding: 20px;
 }
 
 .menu-item {
@@ -539,7 +550,27 @@ h2 {
 .menu-item p {
     margin-top: 10px;
     font-size: 1.1em;
-    color: #333;
+    color: var(--333);
+}
+
+.view-more {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: var(--primary-yellow);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-more:hover {
+    background-color: var(--dark-orange);
+    transform: scale(1.05);
 }
 
 
@@ -790,7 +821,7 @@ h2 {
     justify-content: center;
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 }
 
 .testimonial_chef img {
