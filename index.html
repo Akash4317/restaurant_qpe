@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap styling cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- font awesome  cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- icon cdn -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <!--  navigation bar -->
+    <div class="position-s sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid mx-3">
+                <a href="index.html"><img class="akash-logo" src="./assets/logo.webp" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-auto  mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold mx-3 active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold mx-3" href="#">About Us</a>
+                        </li>
+
+                        <li>
+                            <div class="container-fluid">
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                </form>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" aria-disabled="true" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <button class="btn reservation-btn" data-toggle="modal" data-target="#exampleModalCenterreservation">Reservation</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- reservation modal -->
+    <div class="modal fade" id="exampleModalCenterreservation" tabindex="-1" role="dialog" aria-labelledby="reservationModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex justify-content-center" id="reservationModalTitle">Book a Reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number*</label>
+                            <input type="text" class="form-control" id="mobileNumber" placeholder="+91 Phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservationDate">Date*</label>
+                            <input type="date" class="form-control" id="reservationDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservationTime">Time*</label>
+                            <input type="time" class="form-control" id="reservationTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests*</label>
+                            <input type="number" class="form-control" id="guests" placeholder="Number of Guests" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-warning">Submit Reservation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart/bag -->
+    <div id="mybag" class="bag">
+        <a href="javascript:void(0)" class="closebtn" onclick="closebag()">&times;</a>
+        <h2>CART</h2>
+        <hr>
+        <div class="mybag-item-div">
+            <div class="mybag-item-common-div">
+                <div class="mybag-item">
+                    <div><img src="./assets/food-collections/img1.png" alt=""></div>
+                    <div class="mybag-item_info">
+                        <div>
+                            <h6>Chicken Hyderabadi Dum Biryani. [1kg]</h6>
+                            <p>Salan [200 ml] - ₹55</p>
+                            <p>matka kulfi [200 ml] - ₹55</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="quantity-prices">
+                    <form action="#" class="display-flex">
+                        <div class="qtyminus">-</div>
+                        <input type="text" name="quantity" value="1" class="qty">
+                        <div class="qtyplus">+</div>
+                    </form>
+                    <p class="prices">₹ 1,546</p>
+                </div>
+            </div>
+
+            <hr>
+            <div class="mybag-item-common-div">
+                <div class="mybag-item">
+                    <div><img src="./assets/food-collections/img2.jpg" alt="">
+                    </div>
+                    <div class="mybag-item_info">
+                        <div>
+                            <h6>Chicken Seekh Kebab [250 g]</h6>
+                            <p>Salan [200 ml] - ₹55</p>
+                            <p>matka kulfi [200 ml] - ₹55</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quantity-prices">
+                    <form action="#" class="display-flex">
+                        <div class="qtyminus">-</div>
+                        <input type="text" name="quantity" value="1" class="qty">
+                        <div class="qtyplus">+</div>
+                    </form>
+                    <p class="prices">₹ 1,546</p>
+                </div>
+            </div>
+            <hr>
+            <div class="mybag-item-common-div">
+                <div class="mybag-item">
+                    <div><img src="./assets/food-collections/img3.png" alt=""></div>
+                    <div class="mybag-item_info">
+                        <div>
+                            <h6>Chicken Hyderabadi Dum Biryani. [1kg]</h6>
+                            <p>Salan [200 ml] - ₹55</p>
+                            <p>matka kulfi [200 ml] - ₹55</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="quantity-prices">
+                    <form action="#" class="display-flex">
+                        <div class="qtyminus">-</div>
+                        <input type="text" name="quantity" value="1" class="qty">
+                        <div class="qtyplus">+</div>
+                    </form>
+                    <p class="prices">₹ 1,546</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="bag_footer">
+            <div class="bag_footer_info">
+                <p>SUBTOTAL</p>
+                <p>INR <span>3,198</span></p>
+            </div>
+            <p>Excluding GST and Delivery Charges</p>
+            <button>PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- cart icon -->
+    <section>
+        <div class="cart-image-div" style="cursor:pointer" onclick=" openbag()">
+            <img class="cart-image" src="./assets/cart.png" alt="">
+            <span class="cart-counter">3</span>
+        </div>
+    </section>
+
+    <!-- animated carousel -->
+    <section>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/hero-sliding/hero-slider-4.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/hero-sliding/hero-slider-4.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/hero-sliding/hero-slider-4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- content section -->
+    <section class="content_section">
+        <div class="category_container">
+            <hr>
+            <h4>OFFERS</h4>
+            <hr>
+        </div>
+        <div class="carousel_div">
+            <div class="home-demo">
+                <div class="owl-carousel owl-theme">
+                    <div class="offer-card burgundy">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Rs 125 OFF on First Order</p>
+                            <p class="subtitle">on min. order amount of Rs 499</p>
+                        </div>
+                    </div>
+                    <div class="offer-card yellow">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Rs 100 OFF</p>
+                            <p class="subtitle">on min. subtotal of Rs 399 & above</p>
+                        </div>
+                    </div>
+                    <div class="offer-card burgundy">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Rs 150 OFF</p>
+                            <p class="subtitle">on min. subtotal of Rs 749 & above</p>
+                        </div>
+                    </div>
+                    <div class="offer-card yellow">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Bulk Order? Flat 15% off</p>
+                            <p class="subtitle">Get flat 15% off on order above Rs 3000</p>
+                        </div>
+                    </div>
+                    <div class="offer-card burgundy">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Rs 125 OFF on First Order</p>
+                            <p class="subtitle">on min. order amount of Rs 499</p>
+                        </div>
+                    </div>
+                    <div class="offer-card yellow">
+                        <i><img src="./assets/offer.svg" alt=""></i>
+                        <div>
+                            <p class="title">Rs 100 OFF</p>
+                            <p class="subtitle">on min. subtotal of Rs 399 & above</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- menu section -->
+
+
+    <section>
+        <div class="menu-section">
+            <div class="menu-nav-tab">
+                <h4>Category</h4>
+                <nav>
+                    <div class="nav flex-column flex-md-row" id="nav-tab" role="tablist">
+                        <button class="nav-link active menu-tab-link veg" id="nav-Veg-tab" data-bs-toggle="tab" data-bs-target="#nav-Veg" type="button" role="tab" aria-controls="nav-Veg" aria-selected="true">
+                            Veg
+                        </button>
+                        <button class="nav-link menu-tab-link non-veg" id="nav-NonVeg-tab" data-bs-toggle="tab" data-bs-target="#nav-NonVeg" type="button" role="tab" aria-controls="nav-NonVeg" aria-selected="false">
+                            Non-Veg
+                        </button>
+                        <button class="nav-link menu-tab-link best-seller" id="nav-BestSeller-tab" data-bs-toggle="tab" data-bs-target="#nav-BestSeller" type="button" role="tab" aria-controls="nav-BestSeller" aria-selected="false">
+                            Best Seller
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade active show" id="nav-Veg" role="tabpanel" aria-labelledby="nav-Veg-tab">
+                    <div class="menu-item-div">
+                        <div class="menu-item">
+                            <img src="./assets/menu/img1.jpeg" alt="Toofani Delivery">
+                            <p>Toofani Delivery</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img2.jpg" alt="Hyderabadi Biryani">
+                            <p>Hyderabadi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img3.jpg" alt="Lucknowi Biryani">
+                            <p>Lucknowi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img4.jpg" alt="Kolkata Biryani">
+                            <p>Kolkata Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img5.jpg" alt="Kebabs">
+                            <p>Kebabs</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img6.jpg" alt="Korma and Curries">
+                            <p>Korma and Curries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-NonVeg" role="tabpanel" aria-labelledby="nav-NonVeg-tab">
+                    <div class="menu-item-div">
+                        <div class="menu-item">
+                            <img src="./assets/menu/img1.jpeg" alt="Toofani Delivery">
+                            <p>Toofani Delivery</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img2.jpg" alt="Hyderabadi Biryani">
+                            <p>Hyderabadi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img3.jpg" alt="Lucknowi Biryani">
+                            <p>Lucknowi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img4.jpg" alt="Kolkata Biryani">
+                            <p>Kolkata Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img5.jpg" alt="Kebabs">
+                            <p>Kebabs</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img6.jpg" alt="Korma and Curries">
+                            <p>Korma and Curries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-BestSeller" role="tabpanel" aria-labelledby="nav-BestSeller-tab">
+                    <div class="menu-item-div">
+                        <div class="menu-item">
+                            <img src="./assets/menu/img1.jpeg" alt="Toofani Delivery">
+                            <p>Toofani Delivery</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img2.jpg" alt="Hyderabadi Biryani">
+                            <p>Hyderabadi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img3.jpg" alt="Lucknowi Biryani">
+                            <p>Lucknowi Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img4.jpg" alt="Kolkata Biryani">
+                            <p>Kolkata Biryani</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img5.jpg" alt="Kebabs">
+                            <p>Kebabs</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="./assets/menu/img6.jpg" alt="Korma and Curries">
+                            <p>Korma and Curries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- food collections tab-->
+    <div class="food_tab" id="foodTab">
+        <nav>
+            <div class="carousel_div">
+                <div class="home-demo">
+                    <div class="owl-carousel owl-theme"></div>
+                </div>
+            </div>
+            <div class="nav" id="nav-tab" role="tablist">
+                <button class="nav-link active custom-nav-link" id="nav-Men-tab" data-bs-toggle="tab" data-bs-target="#nav-Men" type="button" role="tab" aria-controls="nav-Men" aria-selected="true">
+                    Main Course
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Women-tab" data-bs-toggle="tab" data-bs-target="#nav-Women" type="button" role="tab" aria-controls="nav-Women" aria-selected="false">
+                    Beverages
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Daily-tab" data-bs-toggle="tab" data-bs-target="#nav-Daily" type="button" role="tab" aria-controls="nav-Daily" aria-selected="false">
+                    Appetizers
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Performance-tab" data-bs-toggle="tab" data-bs-target="#nav-Performance" type="button" role="tab" aria-controls="nav-Performance" aria-selected="false">
+                    Desserts
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Immunity-tab" data-bs-toggle="tab" data-bs-target="#nav-Immunity" type="button" role="tab" aria-controls="nav-Immunity" aria-selected="false">
+                    Specials
+                </button>
+                <button class="nav-link active custom-nav-link" id="nav-Men-tab" data-bs-toggle="tab" data-bs-target="#nav-Men" type="button" role="tab" aria-controls="nav-Men" aria-selected="true">
+                    Main Course
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Women-tab" data-bs-toggle="tab" data-bs-target="#nav-Women" type="button" role="tab" aria-controls="nav-Women" aria-selected="false">
+                    Beverages
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Daily-tab" data-bs-toggle="tab" data-bs-target="#nav-Daily" type="button" role="tab" aria-controls="nav-Daily" aria-selected="false">
+                    Appetizers
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Performance-tab" data-bs-toggle="tab" data-bs-target="#nav-Performance" type="button" role="tab" aria-controls="nav-Performance" aria-selected="false">
+                    Desserts
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Immunity-tab" data-bs-toggle="tab" data-bs-target="#nav-Immunity" type="button" role="tab" aria-controls="nav-Immunity" aria-selected="false">
+                    Specials
+                </button>
+                <button class="nav-link active custom-nav-link" id="nav-Men-tab" data-bs-toggle="tab" data-bs-target="#nav-Men" type="button" role="tab" aria-controls="nav-Men" aria-selected="true">
+                    Main Course
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Women-tab" data-bs-toggle="tab" data-bs-target="#nav-Women" type="button" role="tab" aria-controls="nav-Women" aria-selected="false">
+                    Beverages
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Daily-tab" data-bs-toggle="tab" data-bs-target="#nav-Daily" type="button" role="tab" aria-controls="nav-Daily" aria-selected="false">
+                    Appetizers
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Performance-tab" data-bs-toggle="tab" data-bs-target="#nav-Performance" type="button" role="tab" aria-controls="nav-Performance" aria-selected="false">
+                    Desserts
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Immunity-tab" data-bs-toggle="tab" data-bs-target="#nav-Immunity" type="button" role="tab" aria-controls="nav-Immunity" aria-selected="false">
+                    Specials
+                </button>
+                <button class="nav-link active custom-nav-link" id="nav-Men-tab" data-bs-toggle="tab" data-bs-target="#nav-Men" type="button" role="tab" aria-controls="nav-Men" aria-selected="true">
+                    Main Course
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Women-tab" data-bs-toggle="tab" data-bs-target="#nav-Women" type="button" role="tab" aria-controls="nav-Women" aria-selected="false">
+                    Beverages
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Daily-tab" data-bs-toggle="tab" data-bs-target="#nav-Daily" type="button" role="tab" aria-controls="nav-Daily" aria-selected="false">
+                    Appetizers
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Performance-tab" data-bs-toggle="tab" data-bs-target="#nav-Performance" type="button" role="tab" aria-controls="nav-Performance" aria-selected="false">
+                    Desserts
+                </button>
+                <button class="nav-link custom-nav-link" id="nav-Immunity-tab" data-bs-toggle="tab" data-bs-target="#nav-Immunity" type="button" role="tab" aria-controls="nav-Immunity" aria-selected="false">
+                    Specials
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- food collection content -->
+    <section class="food_collection_modal">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade active show" id="nav-Men" role="tabpanel" aria-labelledby="nav-Men-tab">
+                <div class="food_collection" id="foodie">
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img3.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button" data-toggle="modal" data-target="#uniqueFoodDescriptionModal">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img1.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-Women" role="tabpanel" aria-labelledby="nav-Women-tab">
+                <div class="food_collection" id="foodie">
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img3.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button" data-toggle="modal" data-target="#uniqueFoodDescriptionModal">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img1.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img6.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-Daily" role="tabpanel" aria-labelledby="nav-Daily-tab">
+                <div class="food_collection" id="foodie">
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img3.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button" data-toggle="modal" data-target="#uniqueFoodDescriptionModal">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img1.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img6.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-Performance" role="tabpanel" aria-labelledby="nav-Performance-tab">
+                <div class="food_collection" id="foodie">
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img3.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button" data-toggle="modal" data-target="#uniqueFoodDescriptionModal">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img1.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img6.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-Immunity" role="tabpanel" aria-labelledby="nav-Immunity-tab">
+                <div class="food_collection" id="foodie">
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img3.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button" data-toggle="modal" data-target="#uniqueFoodDescriptionModal">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <span class="food-card-title" id="visible">Chicken Seekh Kebab [250 gms]</span>
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title" id="hide">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img1.png" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img4.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 599 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/food-collections/img6.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img7.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags">
+                                <div class="foodtype veg"></div>
+                                <span class="food-card-title">Toofani Veg Biryani + Thums Up</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                    <div class="food-card">
+                        <img src="./assets/food-collections/img5.jpg" alt="Chicken Seekh Kebab">
+                        <div class="food-card-body">
+                            <div class="tags ">
+                                <div class="foodtype non-veg"></div>
+                                <span class="food-card-title">Chicken Seekh Kebab [250 gms]</span>
+                                <span class="food-card-price">₹379</span>
+                            </div>
+                            <p class="food-card-description">Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.</p>
+                            <div class="food-card-info">
+                                <i class="fas fa-users"></i> 572 People ordered in last week
+                            </div>
+                            <div class="food-card-discount">
+                                <i class="fas fa-tag"></i> Get Rs 100 OFF | Use code: BBK100
+                            </div>
+                        </div>
+                        <button class="food-card-button">ADD</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- food modal -->
+    <div class="modal fade" id="uniqueFoodDescriptionModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Chicken Hyderabadi Biryani[1/2 Kg]</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="food-modal">
+                    <div class="food-description">
+                        <img src="./assets/food-collections/img1.png" alt="Soya Chaap Dum Biryani" class="food-image">
+                        <div class="tags">
+                            <div class="foodtype non-veg"></div>
+                            <span class="food-card-title">[1/2 Kg] Chicken Hyderabadi biryani [ 2 pc Chicken] + Thums up [250 ml]</span>
+                            <span class="food-card-price">₹379</span>
+                        </div>
+                        <p>
+                            <strong>Serves 1-2:</strong> Minced chicken blended with Indian spices grilled over the charcoal flame in skewers.
+                        </p>
+                        <ul class="food-meta">
+                            <li>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>25 min preparation</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>814 People last order in last week</span>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                                <span>Serve for 1-2</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="accompaniment-selection">
+                        <h6>Choose your free Accompaniment</h6>
+                        <div class="free-accompaniment">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="freeAccompaniment" id="raita" value="raita">
+                                <label class="form-check-label" for="raita">
+                                    Raita
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="freeAccompaniment" id="salan" value="salan">
+                                <label class="form-check-label" for="salan">
+                                    Salan
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="freeAccompaniment" id="noAccompaniment" value="noAccompaniment">
+                                <label class="form-check-label" for="noAccompaniment">
+                                    I Love Biryani without adding anything
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <h6>Extra Accompaniment</h6>
+                        <div class="extra-accompaniment">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="extraSalan" value="extraSalan">
+                                <label class="form-check-label" for="extraSalan">
+                                    Salan [200 ml] - ₹55
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="extraRaita" value="extraRaita">
+                                <label class="form-check-label" for="extraRaita">
+                                    Raita [200 ml] - ₹55
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <h6>Deserts & Beverages</h6>
+                        <div class="extra-accompaniment">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="matka-kulfi" value="matka-kulfi">
+                                <label class="form-check-label" for="matka-kulfi">
+                                    matka kulfi [200 ml] - ₹55
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gulab-jamun" value="gulab-jamun">
+                                <label class="form-check-label" for="gulab-jamun">
+                                    Gulab Jamun [200 ml] - ₹55
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Item ₹399</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- promos banner -->
+
+    <section id="promo_banner" class="section section-divider white cta">
+        <div class="promo_container">
+
+            <div class="cta-content">
+                <h2 class="section-title">
+                    The Foodie Have Excellent Of
+                    <span class="span">Quality Burgers!</span>
+                </h2>
+                <p class="section-text">
+                    The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.
+                </p>
+                <button class="btn btn-hover">Order Now</button>
+            </div>
+
+            <figure class="cta-banner">
+                <img src="./assets/promo/cta-banner.png" width="700" height="637" loading="lazy" alt="Burger" class="w-100 cta-img">
+
+                <img src="./assets/promo/sale-shape.png" width="216" height="226" loading="lazy" alt="get up to 50% off now" class="abs-img scale-up-anim">
+            </figure>
+
+        </div>
+    </section>
+
+
+    <!-- customer testimonial -->
+
+    <section>
+        <div class="category_container">
+            <hr>
+            <h4>CUSTOMER TESTIMONIAL</h4>
+            <hr>
+        </div>
+        <div class="testimonial_div">
+            <div class="testimonial_chef">
+                <img src="./assets/testimonial-chef.png" alt="">
+                <div class="feedback-section">
+                    <div class="avatars">
+                        <img src="./assets/avatar/img1.png" alt="Avatar 1">
+                        <img src="./assets/avatar/img2.png" alt="Avatar 2">
+                        <img src="./assets/avatar/img3.png" alt="Avatar 3">
+                    </div>
+                    <div class="feedback-text">
+                        <span>Customer Feedback</span> <br>
+                        <span class="star">★</span>
+                        <span>4.7 (230 Reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial_text">
+                <div class="testimonial_tag">
+                    <h3>What Our Customers <br>Say<span>About us...</span></h4>
+                        <p>Honest Customer Feedback<br> On Google Reviews</p>
+                </div>
+                <div class="testimonial_cards">
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img1.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>I thoroughly enjoyed the meal, it was really tasty! However, the veg seekh kababs were slightly mashed, making it difficult to serve them properly. Nonetheless, I appreciate that the food is well-packed...</p>
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img2.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img3.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img1.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>I thoroughly enjoyed the meal, it was really tasty! However, the veg seekh kababs were slightly mashed, making it difficult to serve them properly. Nonetheless, I appreciate that the food is well-packed...</p>
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img2.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img3.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img1.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>I thoroughly enjoyed the meal, it was really tasty! However, the veg seekh kababs were slightly mashed, making it difficult to serve them properly. Nonetheless, I appreciate that the food is well-packed...</p>
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img2.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="card">
+                            <div class="tweet"><img src="./assets/avatar/img3.png" alt="hanry">
+                                <h3>Hanry</h3>
+                            </div>
+                            <p>Myself and my guests enjoyed the food. The packaging was excellent and it was hassle free on my side. I could enjoy the party without any stress. 😊 Thank you very much for your wonderful service.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- blogs section -->
+
+    <section>
+        <div class="category_container">
+            <hr>
+            <h4>OUR BLOGS</h4>
+            <hr>
+        </div>
+
+        <div class="blogs-div">
+            <div class="blog-card">
+                <div class="card-banner">
+                    <img src="./assets/food-collections/img1.png" width="600" height="390" loading="lazy" alt="What Do You Think About Cheese Pizza Recipes?" class="w-100">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta-wrapper">
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <time class="meta-info" datetime="2022-01-01">Jan 01 2022</time>
+                        </a>
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <p class="meta-info">Jonathan Smith</p>
+                        </a>
+                    </div>
+                    <h3 class="h3 card-title">
+                        What Do You Think About Cheese Pizza Recipes?
+                    </h3>
+                    <p class="card-text">
+                        Financial experts support or help you to to find out which way you can raise your funds more...
+                    </p>
+                    <a href="#" class="btn-link">
+                        <span>Read More</span>
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="card-banner">
+                    <img src="./assets/food-collections/img2.jpg" width="600" height="390" loading="lazy" alt="The Best Vegan Sushi Recipes" class="w-100">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta-wrapper">
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <time class="meta-info" datetime="2022-03-15">Mar 15 2022</time>
+                        </a>
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <p class="meta-info">Emily Brown</p>
+                        </a>
+                    </div>
+                    <h3 class="h3 card-title">
+                        Discover The Best Vegan Sushi Recipes
+                    </h3>
+                    <p class="card-text">
+                        Explore delicious and easy-to-make vegan sushi recipes that will satisfy your cravings without compromising on taste.
+                    </p>
+                    <a href="#" class="btn-link">
+                        <span>Read More</span>
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="card-banner">
+                    <img src="./assets/food-collections/img4.jpg" width="600" height="390" loading="lazy" alt="Quick and Easy Smoothie Bowls" class="w-100">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta-wrapper">
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <time class="meta-info" datetime="2022-05-20">May 20 2022</time>
+                        </a>
+                        <a href="#" class="card-meta-link">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <p class="meta-info">Michael Lee</p>
+                        </a>
+                    </div>
+                    <h3 class="h3 card-title">
+                        Quick and Easy Smoothie Bowls for Busy Mornings
+                    </h3>
+                    <p class="card-text">
+                        Start your day with these quick and easy smoothie bowl recipes that are packed with nutrients and flavor.
+                    </p>
+                    <a href="#" class="btn-link">
+                        <span>Read More</span>
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- grid layout section -->
+
+    <section>
+        <div class="grid-container">
+            <div class="grid-item large-item" id="item1">
+                <img src="./assets/grid/banner-1.jpg" alt="Dish 1">
+                <div class="overlay">
+                    <h2>Tasty Biryani</h2>
+                    <p>Sale off 50% only this week</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="grid-item" id="item2">
+                <img src="./assets/grid/banner-2.jpg" alt="Dish 2">
+                <div class="overlay">
+                    <h2>Delicious Pizza</h2>
+                    <p>50% off Now</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="grid-item" id="item3">
+                <img src="./assets/grid/banner-3.jpg" alt="Dish 3">
+                <div class="overlay">
+                    <h2>American Burgers</h2>
+                    <p>50% off Now</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="grid-item" id="item4">
+                <img src="./assets/grid/banner-4.jpg" alt="Dish 4">
+                <div class="overlay">
+                    <h2>Tasty Buzzed Pizza</h2>
+                    <p>Sale off 50% only this week</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+
+        <div class="footer-top" style="background-image: url('./assets/hero-sliding/footer-illustration.png')">
+            <div class="container">
+
+                <div class="footer-brand">
+
+                    <a href="" class="logo">Cater<span class="span">Ninja</span></a>
+
+                    <p class="footer-text">
+                        Financial experts support or help you to to find out which way you can raise your funds more.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Contact Info</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">+1 (062) 109-9222</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Info@YourGmail24.com</p>
+                    </li>
+
+                    <li>
+                        <address class="footer-list-item">153 Williamson Plaza, Maggieberg, MT 09514</address>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Opening Hours</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Saturday: 10:00-16:00</p>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright-text">
+                    &copy; 2022 <a href="#" class="copyright-link">codewithqpe</a> All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

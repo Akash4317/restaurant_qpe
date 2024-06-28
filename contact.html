@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap styling cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- font awesome  cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icon cdn -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!--  navigation bar -->
+    <div class="position-s sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid mx-3">
+                <img class="akash-logo" src="./assets/logo.webp" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-auto  mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold mx-3 active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold mx-3" href="#">About Us</a>
+                        </li>
+
+                        <li>
+                            <div class="container-fluid">
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                </form>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" aria-disabled="true" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                    <button class="btn reservation-btn" data-toggle="modal" data-target="#exampleModalCenterreservation">Reservation</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- reservation modal -->
+    <div class="modal fade" id="exampleModalCenterreservation" tabindex="-1" role="dialog" aria-labelledby="reservationModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex justify-content-center" id="reservationModalTitle">Book a Reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number*</label>
+                            <input type="text" class="form-control" id="mobileNumber" placeholder="+91 Phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservationDate">Date*</label>
+                            <input type="date" class="form-control" id="reservationDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservationTime">Time*</label>
+                            <input type="time" class="form-control" id="reservationTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests*</label>
+                            <input type="number" class="form-control" id="guests" placeholder="Number of Guests" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-warning">Submit Reservation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart/bag -->
+    <div id="mybag" class="bag">
+        <a href="javascript:void(0)" class="closebtn" onclick="closebag()">&times;</a>
+        <h2>CART</h2>
+        <hr>
+        <div class="mybag-item-div">
+            <div class="mybag-item">
+                <div><img src="./assets/food-collections/img1.png" alt=""></div>
+                <div class="mybag-item_info">
+                    <div>
+                        <h6>Chicken Hyderabadi Dum Biryani. [1kg]</h6>
+                        <p><strong>(free)</strong> Raita</p>
+                        <p>Salan [200 ml] - ₹55</p>
+                        <p>matka kulfi [200 ml] - ₹55</p>
+                    </div>
+                    <div class="quantity-prices">
+                        <form action="#" class="display-flex">
+                            <div class="qtyminus">-</div>
+                            <input type="text" name="quantity" value="1" class="qty">
+                            <div class="qtyplus">+</div>
+                        </form>
+                        <p class="prices">₹ 1,546</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="mybag-item">
+                <div><img src="./assets/food-collections/img2.jpg" alt=""></div>
+                <div class="mybag-item_info">
+                    <div>
+                        <h6>Chicken Seekh Kebab [250 g]</h6>
+                        <p>Salan [200 ml] - ₹55</p>
+                        <p>matka kulfi [200 ml] - ₹55</p>
+                    </div>
+                    <div class="quantity-prices">
+                        <form action="#" class="display-flex">
+                            <div class="qtyminus">-</div>
+                            <input type="text" name="quantity" value="1" class="qty">
+                            <div class="qtyplus">+</div>
+                        </form>
+                        <p class="prices">₹ 1,546</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="mybag-item">
+                <div><img src="./assets/food-collections/img3.png" alt=""></div>
+                <div class="mybag-item_info">
+                    <div>
+                        <h6>Chicken Hyderabadi Dum Biryani. [1kg]</h6>
+                        <p><strong>(free)</strong> Raita</p>
+                        <p>Salan [200 ml] - ₹55</p>
+                        <p>matka kulfi [200 ml] - ₹55</p>
+                    </div>
+                    <div class="quantity-prices">
+                        <form action="#" class="display-flex">
+                            <div class="qtyminus">-</div>
+                            <input type="text" name="quantity" value="1" class="qty">
+                            <div class="qtyplus">+</div>
+                        </form>
+                        <p class="prices">₹ 1,546</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bag_footer">
+            <div class="bag_footer_info">
+                <p>SUBTOTAL</p>
+                <p>INR <span>3,198</span></p>
+            </div>
+            <p>Excluding GST and Delivery Charges</p>
+            <button>PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- cart icon -->
+    <section>
+        <div class="cart-image-div" style="cursor:pointer" onclick=" openbag()">
+            <img class="cart-image" src="./assets/cart.png" alt="">
+            <span class="cart-counter">3</span>
+        </div>
+    </section>
+
+
+    <!-- contact us section -->
+
+    <section>
+
+        <div class="section-header">
+
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>At ninja cater Food, we believe the best dishes are the ones that remind you of childhood. A portion of great food should make you feel like you are wrapped in a warm blanket.</p>
+            </div>
+        </div>
+
+        <div class="container" id="row">
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Address</h4>
+                        <p>Building No. 279 sultanpur<br/> New Delhi <br/>122060</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Phone</h4>
+                        <p>999-999-9999</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Email</h4>
+                        <p>example@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <h2>Send Message</h2>
+                    <div class="input-box">
+                        <input id="input_one_fullname" placeholder="Full Name" type="text" required="true" name="">
+                    </div>
+
+
+                    <div class="input-box">
+                        <input id="input_one_email" placeholder="Email" type="email" required="true" name="">
+                    </div>
+
+                    <div class="input-box">
+                        <textarea id="input_one_message" placeholder="Type your Message..." required="true" name=""></textarea>
+                    </div>
+
+                    <div class="input-box">
+                        <input id="send" type="submit" value="Send" name="">
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+
+        <div class="footer-top" style="background-image: url('./assets/hero-sliding/footer-illustration.png')">
+            <div class="container">
+
+                <div class="footer-brand">
+
+                    <a href="" class="logo">Cater<span class="span">Ninja</span></a>
+
+                    <p class="footer-text">
+                        Financial experts support or help you to to find out which way you can raise your funds more.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Contact Info</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">+1 (062) 109-9222</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Info@YourGmail24.com</p>
+                    </li>
+
+                    <li>
+                        <address class="footer-list-item">153 Williamson Plaza, Maggieberg, MT 09514</address>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Opening Hours</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+                    </li>
+
+                    <li>
+                        <p class="footer-list-item">Saturday: 10:00-16:00</p>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright-text">
+                    &copy; 2022 <a href="#" class="copyright-link">codewithqpe</a> All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- custom script -->
+    <script src="script.js"></script>
+    <!-- bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
