@@ -138,10 +138,10 @@ h2 {
 
 .quantity-prices {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    gap: 60px;
-    padding-right: 50px;
+    gap: 65px;
+    padding-left: 33px;
 }
 
 .quantity-prices>p {
