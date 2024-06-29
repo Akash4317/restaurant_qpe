@@ -90,3 +90,19 @@ function openbag() {
 function closebag() {
     document.getElementById("mybag").style.width = "0px"
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.food-card');
+
+    cards.forEach(card => {
+        card.addEventListener('touchstart', () => {
+            card.classList.add('hover');
+        });
+
+        card.addEventListener('touchend', () => {
+            setTimeout(() => {
+                card.classList.remove('hover');
+            }, 300); // Adjust timing as needed
+        });
+    });
+});
