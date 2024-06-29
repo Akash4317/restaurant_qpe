@@ -250,6 +250,10 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-toggler-icon {
+    background: radial-gradient(#333) !important;
+}
+
 
 /* reservation modal styling */
 
@@ -493,6 +497,18 @@ h2 {
     font-weight: bold;
 }
 
+.category {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .category {
+        display: flex;
+        flex-direction: row !important;
+    }
+}
+
 .menu-nav-tab .category_container hr {
     max-width: 150px !important;
     flex-grow: 1;
@@ -540,7 +556,7 @@ h2 {
 
 .menu-item {
     text-align: center;
-    width: 185px;
+    max-width: 185px;
     height: 200px;
     background-color: #fffdec;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -597,7 +613,8 @@ h2 {
 
 @media (max-width: 480px) {
     .menu-item-div {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
     .menu-item {
         width: 100%;
